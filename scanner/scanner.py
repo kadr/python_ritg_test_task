@@ -7,6 +7,8 @@ args = sys.argv
 args.pop(0)
 port = 10000
 
+SCAN_TIMEOUT_IN_SEC = 2
+
 if '-folder' not in args:
     print("argument folder is required")
     exit(1)
@@ -66,4 +68,4 @@ while True:
                 send_changes(old_path, old_size,  'DELETE')
 
     files_dict = entries
-    sleep(2)
+    sleep(SCAN_TIMEOUT_IN_SEC)
